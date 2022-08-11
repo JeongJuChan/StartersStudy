@@ -1,4 +1,4 @@
-# [Bronze V] A+B - 3 - 10950 
+# [Bronze V] A+B - 3 - 10950 ASD
 
 [문제 링크](https://www.acmicpc.net/problem/10950) 
 
