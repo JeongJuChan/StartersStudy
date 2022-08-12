@@ -12,7 +12,6 @@ namespace BlackJackProject
             // % 6 60 600 6000 ... == 0 연속 3개
             int num = 666;
             int comp = 666;
-            int mode = 1;
             string input = Console.ReadLine();
             string temp = "";
             int iInput = int.Parse(input);
@@ -20,7 +19,7 @@ namespace BlackJackProject
             while (true)
             {
                 // num에 연속한 666이 있으면
-                temp = (comp * mode).ToString();
+                temp = comp.ToString();
                 if (num.ToString().Contains(temp))
                     count++;
                 if (count == iInput)
