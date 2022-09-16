@@ -2,24 +2,16 @@ using System;
 public class Solution {
     public long solution(long n) {
         long answer = 0;
-            double i = 1;
-            while (true)
+            double num;
+            num = Math.Sqrt(n);
+            if (num % 1 == 0)
             {
-                double temp = Math.Pow(i, 2);
-                if (temp > n)
-                {
-                    answer = -1;
-                    break;
-                }
-
-                if (n == temp)
-                {
-                    temp = Math.Pow(i+1, 2);
-                    answer = (long)temp;
-                    break;
-                }
-                i++;
+                answer = (long)Math.Pow(num + 1, 2);
             }
+        else
+        {
+            answer = -1;
+        }
         return answer;
     }
 }
