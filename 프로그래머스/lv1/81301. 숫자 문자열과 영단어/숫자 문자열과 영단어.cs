@@ -1,29 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 public class Solution {
     public int solution(string s) {
-        string[] strArr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-            char[] chars = s.ToCharArray();
-            StringBuilder stringBuilder = new StringBuilder();
-            StringBuilder stringBuilder2 = new StringBuilder();
-            for (int i = 0; i < chars.Length; i++)
+        Dictionary<string, string> switchDic = new Dictionary<string, string>()
             {
-                if (char.IsDigit(chars[i]))
-                {
-                    stringBuilder2.Append(chars[i]);
-                    continue;
-                }
-                stringBuilder.Append(chars[i]);
-                for (int j = 0; j < strArr.Length; j++)
-                {
-                    if (stringBuilder.ToString().Equals(strArr[j]))
-                    {
-                        stringBuilder2.Append(j);
-                        stringBuilder.Clear();
-                    }
-                }
+                {"zero", "0"}, {"one", "1"}, {"two", "2"} ,{"three", "3"} , {"four", "4"} , {"five", "5"} , {"six", "6"} , {"seven", "7"}, {"eight", "8"} , {"nine", "9"} 
+            };
+
+            foreach (KeyValuePair<string, string> keyValuePair in switchDic)
+            {
+                s = s.Replace(keyValuePair.Key, keyValuePair.Value);
             }
-        return int.Parse(stringBuilder2.ToString());
+
+            return int.Parse(s);
     }
 }
